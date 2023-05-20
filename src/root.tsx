@@ -9,7 +9,7 @@ const LargeLink = (props: LinkProps) => {
   );
 };
 
-function Root() {
+export function Root() {
   return (
     <>
       <div id="main-outer-container">

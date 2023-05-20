@@ -98,6 +98,12 @@ body {
 .link-tree-container {
   margin-left: 1rem;
   margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.link-tree-container > span {
+  width: fit-content;
+  padding-top: 0.4rem;
 }
 
 .text-light {
@@ -105,18 +111,20 @@ body {
 }
 .text-logo {
   width: fit-content;
+  padding-bottom: 4px;
+  padding-left: 4px;
 }
 
 .outset {
-  border-bottom: double var(--color-mid) 2px;
-  border-left: double var(--color-mid) 2px;
+  border-bottom: double var(--color-light) 4px;
+  border-left: double var(--color-light) 4px;
 }
 
 .typewriter {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0.15rem;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
 }
 div.typewriter {
   animation: 0.7s typing steps(32, end);
@@ -137,10 +145,6 @@ div.typewriter {
   to {
     border: 0;
   }
-}
-
-.link-tree-container > span {
-  padding-top: 0.4rem;
 }
 
 .hover-underline {
