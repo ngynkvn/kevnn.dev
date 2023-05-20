@@ -1,11 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap");
+
+#main-container * {
+  /* outline: red solid 1px; */
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /*** VARS ***/
+  --color-highlight: #24242b;
+  --color-light: #f5d3c8;
+  --color-mid: #2c3949;
+  --color-main: #18141f;
+  --color-background: #051824;
+  --color-text: rgb(224, 203, 203);
+
+  /* Interactables */
+  --color-text-link: #dbbdbc;
+  --text-link-color-hover: #535bf2;
+  --color-underline-anim: #0087ca;
+  /************/
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--color-text);
+  background-color: var(--color-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,54 +32,169 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-text-link);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--text-link-color-hover);
 }
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "IBM Plex Mono", monospace;
+}
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  height: 80%;
+  width: 80%;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.header-container {
+  padding: 0.4em;
+  background-color: var(--color-highlight);
+  font-size: large;
+  font-weight: lighter;
 }
-button:hover {
-  border-color: #646cff;
+.content-container {
+  padding: 1em;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.footer-container {
+  padding: 1em;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+#main-outer-container {
+  width: 100%;
+  height: 100%;
+}
+
+#main-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: solid var(--color-mid) 1px;
+  background-color: var(--color-main);
+}
+
+.large-txt {
+  font-size: 40px;
+  font-weight: bold;
+  opacity: 1;
+}
+.large-txt:hover {
+  font-weight: bold;
+  opacity: 1;
+}
+
+.link-tree-container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.text-light {
+  font-weight: lighter;
+}
+.text-logo {
+  width: fit-content;
+}
+
+.outset {
+  border-bottom: double var(--color-mid) 2px;
+  border-left: double var(--color-mid) 2px;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.15rem;
+  margin-bottom: 2px;
+}
+div.typewriter {
+  animation: 0.7s typing steps(32, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
-  a:hover {
-    color: #747bff;
+  to {
+    width: 100%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+@keyframes caret {
+  from {
+    border-right: solid 0.15rem orange;
+  }
+  to {
+    border: 0;
+  }
+}
+
+.link-tree-container > span {
+  padding-top: 0.4rem;
+}
+
+.hover-underline {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-underline-anim);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+  transform-origin: bottom left;
+}
+
+@media (max-width: 40rem) {
+  #main-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .left-container {
+    padding-bottom: 0.6rem;
+  }
+
+  .right-container {
+    border-top: solid var(--color-mid) 1px;
+  }
+  .large-txt {
+    font-size: 1.125rem;
+    margin-right: 0.875rem;
+  }
+}
+@media (min-width: 40rem) {
+  .left-container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 100%;
+    display: inline;
+  }
+
+  .right-container {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    border-left: solid var(--color-mid) 1px;
   }
 }

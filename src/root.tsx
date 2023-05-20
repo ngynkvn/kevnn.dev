@@ -1,5 +1,3 @@
-import { RefAttributes, useState } from "react";
-import "./root.css";
 import { Link, LinkProps } from "react-router-dom";
 import { AppRoutes } from "./routes";
 
@@ -14,22 +12,23 @@ const LargeLink = (props: LinkProps) => {
 function Root() {
   return (
     <>
-      <div id="main">
-        <div id="l">
-          <ul>
-            <li>
+      <div id="main-outer-container">
+        <div id="main-container">
+          <div className="left-container">
+            <header className="header-container">
+              <div className="text-logo text-light outset">
+                <a href="#">kevnn.dev</a>
+              </div>
+            </header>
+            <div className="link-tree-container">
               <LargeLink to={"/"}>Home</LargeLink>
-            </li>
-            <li>
               <LargeLink to={"/projects"}>Projects</LargeLink>
-            </li>
-            <li>
               <LargeLink to={"/social"}>Social</LargeLink>
-            </li>
-          </ul>
-        </div>
-        <div id="r">
-          <AppRoutes />
+            </div>
+          </div>
+          <div className="right-container">
+            <AppRoutes />
+          </div>
         </div>
       </div>
     </>

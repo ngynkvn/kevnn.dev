@@ -1,0 +1,53 @@
+h1 {
+  perspective: 500px;
+}
+.spinny::after {
+  content: "🛹";
+  display: inline-block;
+  animation: spinny 2.4s linear infinite, switchy 24s linear infinite;
+}
+
+@keyframes spinny {
+  from,
+  to {
+    rotate: y 0deg;
+    opacity: 1;
+  }
+  50% {
+    rotate: y 180deg;
+    opacity: 0;
+  }
+}
+
+@keyframes switchy {
+  0% {
+    content: "🐍";
+  }
+  10% {
+    content: "🎸";
+  }
+  20% {
+    content: "🐊";
+  }
+  30% {
+    content: "🦀";
+  }
+  40% {
+    content: "🎮";
+  }
+  50% {
+    content: "🪨";
+  }
+  60% {
+    content: "✅";
+  }
+  70% {
+    content: "🖥️";
+  }
+  80% {
+    content: "📊";
+  }
+  90% {
+    content: "🛹";
+  }
+}
