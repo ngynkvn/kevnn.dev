@@ -1,5 +1,5 @@
-import { Link, LinkProps } from "react-router-dom";
-import { AppRoutes } from "./routes";
+import { Outlet } from "react-router";
+import { LinkProps, Link } from "react-router-dom";
 
 const LargeLink = (props: LinkProps) => {
   return (
@@ -9,7 +9,7 @@ const LargeLink = (props: LinkProps) => {
   );
 };
 
-export function Root() {
+export const Sidenav = () => {
   return (
     <>
       <div id="main-outer-container">
@@ -21,18 +21,17 @@ export function Root() {
               </div>
             </header>
             <div className="link-tree-container">
-              <LargeLink to={"/"}>Home</LargeLink>
-              <LargeLink to={"/projects"}>Projects</LargeLink>
-              <LargeLink to={"/social"}>Social</LargeLink>
+              <LargeLink to={""}>Home</LargeLink>
+              <LargeLink to={"projects"}>Projects</LargeLink>
+              <LargeLink to={"social"}>Social</LargeLink>
+              <LargeLink to={"duck"}>Duck🦆</LargeLink>
             </div>
           </div>
           <div className="right-container">
-            <AppRoutes />
+            <Outlet />
           </div>
         </div>
       </div>
     </>
   );
-}
-
-export default Root;
+};
