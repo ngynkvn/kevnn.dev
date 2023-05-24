@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import { LinkProps, Link } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 
 const LargeLink = (props: LinkProps) => {
   return (
@@ -17,7 +18,7 @@ export const Sidenav = () => {
           <div className="left-container">
             <header className="header-container">
               <div className="text-logo text-light outset">
-                <a href="#">kevnn.dev</a>
+                <Link to="">kevnn.dev</Link>
               </div>
             </header>
             <div className="link-tree-container">

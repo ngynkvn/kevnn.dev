@@ -1,4 +1,5 @@
 import "./index.css";
+import "./phrase-swap.css";
 
 function getRandomPhrase() {
   const phrases = [
@@ -16,11 +17,14 @@ function getRandomPhrase() {
 }
 
 export const Home = () => {
+  const phrase = getRandomPhrase();
   return (
     <div>
       <h1>
         <span className="spinny"></span>
-        {getRandomPhrase()}
+        <span key={phrase} className="phrase-swap">
+          {phrase}
+        </span>
       </h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam dolor hic

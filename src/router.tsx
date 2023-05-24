@@ -8,24 +8,29 @@ import { Duck } from "./routes/duck";
 
 export const router = createHashRouter([
   {
-    path: "duck",
-    Component: Duck,
-  },
-  {
     path: "/",
-    Component: Sidenav,
     children: [
       {
+        path: "duck",
+        Component: Duck,
+      },
+      {
         path: "",
-        Component: () => Page(<Home />),
-      },
-      {
-        path: "projects",
-        Component: () => Page(<Projects />),
-      },
-      {
-        path: "social",
-        Component: () => Page(<Social />),
+        Component: Sidenav,
+        children: [
+          {
+            path: "",
+            Component: () => Page(<Home />),
+          },
+          {
+            path: "projects",
+            Component: () => Page(<Projects />),
+          },
+          {
+            path: "social",
+            Component: () => Page(<Social />),
+          },
+        ],
       },
     ],
   },

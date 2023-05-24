@@ -1,6 +1,10 @@
 h1 {
   perspective: 500px;
 }
+.spinny {
+  float: right;
+  margin-right: 1rem;
+}
 .spinny::after {
   content: "🛹";
   display: inline-block;
