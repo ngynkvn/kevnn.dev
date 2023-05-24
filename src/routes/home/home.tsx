@@ -1,5 +1,6 @@
 import "./index.css";
 import "./phrase-swap.css";
+import pug_dance from "../../assets/pug_dance.gif";
 
 function getRandomPhrase() {
   const phrases = [
@@ -11,7 +12,7 @@ function getRandomPhrase() {
     "Welcome to Kevin's portfolio.",
     "Kevin says hello!",
     "Kepp!",
-    ":pug-dance:",
+    <img src={pug_dance} />,
   ];
   return phrases[Math.floor(Math.random() * phrases.length)];
 }
@@ -22,7 +23,10 @@ export const Home = () => {
     <div>
       <h1>
         <span className="spinny"></span>
-        <span key={phrase} className="phrase-swap">
+        <span
+          key={typeof phrase === "string" ? phrase : "pug_dance"}
+          className="phrase-swap"
+        >
           {phrase}
         </span>
       </h1>
