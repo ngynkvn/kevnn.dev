@@ -47,7 +47,7 @@ body {
 
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   font-family: "IBM Plex Mono", monospace;
 }
 #root {
@@ -79,7 +79,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  height: 100%;
+  min-height: 80vh;
   box-sizing: border-box;
   border: solid var(--color-mid) 1px;
   background-color: var(--color-main);
@@ -201,4 +201,8 @@ div.typewriter {
     grid-column-end: 5;
     border-left: solid var(--color-mid) 1px;
   }
+}
+
+.social-link-container {
+  word-wrap: break-word;
 }

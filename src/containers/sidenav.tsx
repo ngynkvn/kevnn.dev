@@ -1,6 +1,5 @@
 import { Outlet } from "react-router";
 import { LinkProps, Link } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
 
 const LargeLink = (props: LinkProps) => {
   return (
