@@ -1,0 +1,104 @@
+# Compound Components
+## Kevin Nguyen
+
+---
+
+## Understanding Compound Components
+
+### Definition
+
+Compound components are a pattern in React where a parent component wraps multiple child components, 
+allowing the parent to control the behavior and rendering of the child components.
+
+Aim: Creating highly reusable and flexible components.
+
+### Why Compound Components?
+
+- Encourages composition over configuration
+- Provides a clean and intuitive API for the consumers of the component
+- Allows for flexible customization while maintaining consistency
+
+---
+
+## Anatomy of Compound Components
+
+### Parent Component
+
+- In compound components, we have a parent component that acts as a container for the child components. 
+- Parent component manages the state and provides the necessary context for the child components to interact.
+
+- ** Parents hold state + context **
+
+### Child Components
+
+- Individual components that are wrapped by the parent component. 
+- Props passed down from parent component.
+- Render based on the parent's state or context.
+
+- ** Child components manipulate that state**
+
+---
+
+### Example: Tabs Component
+
+Let's take a look at a practical example of compound components using a Tabs component.
+
+```jsx
+import React, { useState } from 'react';
+
+const Tabs = ({ children }) => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  return (
+    <div>
+      <div className="tab-header">
+        {children.map((child, index) => (
+          <button
+            key={index}
+            className={index === activeTab ? 'active' : ''}
+            onClick={() => setActiveTab(index)}
+          >
+            {child.props.label}
+          </button>
+        ))}
+      </div>
+      <div className="tab-content">
+        {children[activeTab]}
+      </div>
+    </div>
+  );
+};
+
+const Tab = ({ children }) => {
+  return <>{children}</>;
+};
+
+const App = () => {
+  return (
+    <Tabs>
+      <Tab label="Tab 1">
+        <p>Content for Tab 1</p>
+      </Tab>
+      <Tab label="Tab 2">
+        <p>Content for Tab 2</p>
+      </Tab>
+      <Tab label="Tab 3">
+        <p>Content for Tab 3</p>
+      </Tab>
+    </Tabs>
+  );
+};
+
+export default App;
+```
+
+---
+
+# How is this different from prop-drilling??
+
+- Prop drilling can be *deep*, involving multiple intermediate components between source and destination.
+    - Compound components aim to encapsulate related state, and decouple component logic and rendering.
+- Prop drilling leads to a situation where intermediate components receive props that they don't use
+
+- Compound components ideally stay shallow
+    - Sandbox!
