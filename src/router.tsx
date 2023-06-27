@@ -1,12 +1,12 @@
 import { createHashRouter } from "react-router-dom";
 import { Home } from "./routes/home/home";
 import { Page } from "./containers/page";
-import { Sidenav } from "./containers/sidenav";
+import { Nav } from "./containers/nav";
 import { Projects } from "./routes/projects";
 import { Social } from "./routes/social";
 import { Duck } from "./routes/duck";
 
-export const router = createHashRouter([
+export const routes = [
   {
     path: "/",
     children: [
@@ -16,7 +16,7 @@ export const router = createHashRouter([
       },
       {
         path: "",
-        Component: Sidenav,
+        Component: Nav,
         children: [
           {
             path: "",
@@ -34,4 +34,6 @@ export const router = createHashRouter([
       },
     ],
   },
-]);
+];
+
+export const router = createHashRouter(routes);

@@ -1,0 +1,23 @@
+@import "../assets/normalize.css";
+@import "../themes/earthy.css";
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("../assets/SpaceMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-weight: bold;
+  src: url("../assets/SpaceMono-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: italic;
+  src: url("../assets/SpaceMono-Italic.ttf");
+}
+
+:root {
+  font-family: "Space Mono";
+}

@@ -1,18 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap");
-
-#main-container * {
-  /* outline: red solid 1px; */
-}
+@import url("themes/earthy.css");
 
 :root {
-  /*** VARS ***/
-  --color-highlight: #24242b;
-  --color-light: #f5d3c8;
-  --color-mid: #2c3949;
-  --color-main: #18141f;
-  --color-background: #051824;
-  --color-text: rgb(224, 203, 203);
-
   /* Interactables */
   --color-text-link: #dbbdbc;
   --text-link-color-hover: #535bf2;
@@ -75,16 +64,6 @@ body {
   height: 100%;
 }
 
-#main-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  min-height: 80vh;
-  box-sizing: border-box;
-  border: solid var(--color-mid) 1px;
-  background-color: var(--color-main);
-}
-
 .large-txt {
   font-size: 40px;
   font-weight: bold;
@@ -93,31 +72,6 @@ body {
 .large-txt:hover {
   font-weight: bold;
   opacity: 1;
-}
-
-.link-tree-container {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-.link-tree-container > span {
-  width: fit-content;
-  padding-top: 0.4rem;
-}
-
-.text-light {
-  font-weight: lighter;
-}
-.text-logo {
-  width: fit-content;
-  padding-bottom: 4px;
-  padding-left: 4px;
-}
-
-.outset {
-  border-bottom: double var(--color-light) 4px;
-  border-left: double var(--color-light) 4px;
 }
 
 .typewriter {
@@ -169,38 +123,6 @@ div.typewriter {
   transform: scaleX(1);
   opacity: 1;
   transform-origin: bottom left;
-}
-
-@media (max-width: 40rem) {
-  #main-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .left-container {
-    padding-bottom: 0.6rem;
-  }
-
-  .right-container {
-    border-top: solid var(--color-mid) 1px;
-  }
-  .large-txt {
-    font-size: 1.125rem;
-    margin-right: 0.875rem;
-  }
-}
-@media (min-width: 40rem) {
-  .left-container {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    width: 100%;
-    display: inline;
-  }
-
-  .right-container {
-    grid-column-start: 2;
-    grid-column-end: 5;
-    border-left: solid var(--color-mid) 1px;
-  }
 }
 
 .social-link-container {

@@ -1,0 +1,15 @@
+/* CSS HEX */
+:root {
+  --drab-dark-brown: #141406;
+  --ecru: rgb(26, 19, 7);
+  --khaki: rgb(211, 189, 141);
+  --drab-dark-brown-2: rgb(117, 88, 44);
+  --dark-moss-green: #111305;
+
+  --color-highlight: var(--ecru) !important;
+  --color-light: var(--khaki) !important;
+  --color-mid: var(--drab-dark-brown-2) !important;
+  --color-main: var(--dark-moss-green) !important;
+  --color-background: var(--drab-dark-brown) !important;
+  --color-text: rgb(224, 203, 203) !important;
+}

@@ -1,0 +1,9 @@
+:root {
+  /*** VARS ***/
+  --color-highlight: #24242b;
+  --color-light: #f5d3c8;
+  --color-mid: #2c3949;
+  --color-main: #18141f;
+  --color-background: #051824;
+  --color-text: rgb(224, 203, 203);
+}

@@ -1,0 +1,61 @@
+@import "./common.css";
+
+.button {
+  font-family: var(--font-family);
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: -1px 2px 0;
+  line-height: 1;
+}
+
+.button {
+  color: var(--button-color);
+  background-color: var(--button-bgc);
+  border: 1px var(--button-border) solid;
+
+  box-shadow: -1px 2px 0;
+
+  transition: filter 50ms ease-out, translate 80ms ease-out,
+    box-shadow 80ms ease-out;
+}
+
+.button--primary {
+  --button-color: var(--color-text);
+  --button-bgc: var(--color-main);
+  --button-border: var(--color-light);
+}
+
+.button--secondary {
+  --button-color: var(--color-main);
+  --button-bgc: var(--color-bgc-secondary);
+  --button-border: var(--color-dark);
+}
+
+.button:active {
+  box-shadow: 0 0 0;
+  translate: -1px 2px;
+}
+
+.button--primary:hover {
+  filter: brightness(1.6);
+}
+
+.button--secondary:hover {
+  filter: brightness(1.1);
+}
+
+.button--small {
+  font-size: 0.75em;
+  padding: 0.33rem 0.75rem;
+}
+
+.button--medium {
+  font-size: 1em;
+  padding: 1rem 1.5rem;
+}
+
+.button--large {
+  font-size: 1.25em;
+  padding: 1rem 2rem;
+}
