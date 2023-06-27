@@ -26,6 +26,7 @@ export type ButtonProps = React.ComponentPropsWithRef<"button"> & {
    */
   onClick?: () => void;
 
+  label?: React.ReactNode;
   children?: React.ReactNode;
 };
 
@@ -38,6 +39,7 @@ export const Button = ({
   backgroundColor,
   children,
   color,
+  label,
   ...props
 }: ButtonProps) => {
   const mode = primary ? "button--primary" : "button--secondary";
@@ -48,7 +50,7 @@ export const Button = ({
       {...props}
       className={["button", `button--${size}`, mode, props.className].join(" ")}
     >
-      {children}
+      {children || label}
     </button>
   );
 };

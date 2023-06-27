@@ -8,17 +8,10 @@ export const Home = () => {
       <h1>
         <PhraseSpinner key={refresh} />
       </h1>
+      <p>Oh hi.</p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam dolor hic
-        nostrum, dolorum officiis enim, laboriosam adipisci sint eos delectus
-        alias fugit cupiditate nesciunt similique nobis aut. Eaque, commodi
-        voluptas.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam dolor hic
-        nostrum, dolorum officiis enim, laboriosam adipisci sint eos delectus
-        alias fugit cupiditate nesciunt similique nobis aut. Eaque, commodi
-        voluptas.
+        You've stumbled upon a React Single Page App I'm using to test out
+        different libraries and components. Welcome to chaos :)
       </p>
     </div>
   );
